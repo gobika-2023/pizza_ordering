@@ -1,15 +1,37 @@
 function loadComponent(id,file){
+
 fetch(file)
-.then(res=>res.text())
+.then(res => {
+
+if(!res.ok){
+throw new Error("Component not found: "+file)
+}
+
+return res.text()
+
+})
 .then(data=>{
-document.getElementById(id).innerHTML=data
+
+let element=document.getElementById(id)
+
+if(element){
+element.innerHTML=data
+}
+
 updateCart()
 logoutSystem()
+
 })
+.catch(err=>{
+console.error(err)
+})
+
 }
 
 document.addEventListener("DOMContentLoaded",()=>{
+
 loadComponent("navbar","components/navbar.html")
+
 })
 
 function updateCart(){

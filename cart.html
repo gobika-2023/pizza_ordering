@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -51,13 +53,41 @@ border-radius:10px;
 margin-bottom:15px;
 }
 
+.cart-item img{
+border-radius:8px;
+}
+
 .cart-info{
 margin-left:20px;
+}
+
+.cart-info button{
+margin-top:10px;
+background:red;
+color:white;
+border:none;
+padding:6px 10px;
+border-radius:5px;
+cursor:pointer;
 }
 
 #cartTotal{
 margin-top:30px;
 font-size:22px;
+}
+
+#payBtn{
+margin-top:20px;
+padding:12px 25px;
+font-size:18px;
+background:orange;
+border:none;
+border-radius:8px;
+cursor:pointer;
+}
+
+#payBtn:hover{
+background:#ff9f1c;
 }
 
 </style>
@@ -81,6 +111,7 @@ font-size:22px;
 
 </div>
 
+
 <!-- CART SECTION -->
 
 <div class="container">
@@ -91,7 +122,12 @@ font-size:22px;
 
 <h2 id="cartTotal"></h2>
 
+<button id="payBtn" onclick="goToPayment()">Pay Now</button>
+
 </div>
+
+
+<!-- CART SCRIPT -->
 
 <script>
 
@@ -103,9 +139,16 @@ let total = 0
 
 container.innerHTML = ""
 
-cart.forEach(item => {
+if(cart.length === 0){
+
+container.innerHTML = "<h3>Your cart is empty</h3>"
+
+}
+
+cart.forEach((item,index) => {
 
 let card = document.createElement("div")
+
 card.className = "cart-item"
 
 card.innerHTML = `
@@ -120,6 +163,10 @@ card.innerHTML = `
 
 <b>₹${item.price}</b>
 
+<br>
+
+<button onclick="removeItem(${index})">Remove</button>
+
 </div>
 
 `
@@ -131,6 +178,32 @@ total += item.price
 })
 
 document.getElementById("cartTotal").innerText = "Total: ₹" + total
+
+
+function removeItem(index){
+
+cart.splice(index,1)
+
+localStorage.setItem("cart",JSON.stringify(cart))
+
+location.reload()
+
+}
+
+
+function goToPayment(){
+
+if(cart.length === 0){
+
+alert("Your cart is empty!")
+
+return
+
+}
+
+window.location.href = "payment.html"
+
+}
 
 </script>
 

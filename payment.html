@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>PizzaHub Payment</title>
+
+<style>
+
+body{
+font-family:Arial;
+background:#0b1a2d;
+color:white;
+text-align:center;
+padding-top:100px;
+}
+
+.payment-box{
+background:#132a45;
+width:400px;
+margin:auto;
+padding:30px;
+border-radius:10px;
+}
+
+input{
+width:90%;
+padding:10px;
+margin:10px 0;
+border:none;
+border-radius:5px;
+}
+
+button{
+padding:12px 20px;
+background:orange;
+border:none;
+border-radius:6px;
+font-size:16px;
+cursor:pointer;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="payment-box">
+
+<h2>Payment</h2>
+
+<input type="text" placeholder="Card Number">
+<input type="text" placeholder="Card Holder Name">
+<input type="text" placeholder="Expiry Date">
+<input type="text" placeholder="CVV">
+
+<br>
+
+<button onclick="pay()">Pay Now</button>
+
+</div>
+
+<script>
+
+function pay(){
+
+let cart = JSON.parse(localStorage.getItem("cart")) || []
+let orders = JSON.parse(localStorage.getItem("orders")) || []
+
+if(cart.length === 0){
+alert("Cart is empty")
+return
+}
+
+let order = {
+id: Date.now(),
+date: new Date().toLocaleString(),
+items: cart
+}
+
+orders.push(order)
+
+localStorage.setItem("orders", JSON.stringify(orders))
+
+localStorage.removeItem("cart")
+
+alert("Payment Successful! 🎉")
+
+window.location.href = "orders.html"
+
+}
+
+</script>
+
+</body>
+</html>

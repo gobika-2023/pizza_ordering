@@ -1,42 +1,26 @@
-let cart = JSON.parse(localStorage.getItem("cart")) || []
+<!DOCTYPE html>
+<html>
+<head>
+<title>Orders</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
 
-let container = document.getElementById("cartItems")
+<body>
 
-let total = 0
+<div id="navbar"></div>
 
-container.innerHTML = ""
+<div class="container">
 
-if(cart.length === 0){
+<h1 style="color:white">Order History</h1>
 
-container.innerHTML = "<h3>Your cart is empty</h3>"
-
-}
-
-cart.forEach(item => {
-
-let card = document.createElement("div")
-
-card.className = "cart-item"
-
-card.innerHTML = `
-
-<img src="${item.image}" width="120">
-
-<div>
-
-<h3>${item.name}</h3>
-
-<p>Size : ${item.size}</p>
-
-<b>Rs. ${item.price}</b>
+<div id="ordersList"></div>
 
 </div>
-`
 
-container.appendChild(card)
+<div id="footer"></div>
 
-total += item.price
+<script src="js/main.js"></script>
+<script src="js/orders.js"></script>
 
-})
-
-document.getElementById("cartTotal").innerText = "Total : Rs. " + total
+</body>
+</html>

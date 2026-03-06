@@ -159,6 +159,7 @@ margin-bottom:8px;
 color:#f97316;
 font-size:18px;
 }
+
 .size-select{
 margin-top:8px;
 }
@@ -207,7 +208,42 @@ margin-bottom:15px;
 width:80px;
 border-radius:8px;
 }
+.navbar{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 40px;
+background:#ff4d4d;
+color:white;
+font-family:Arial;
+}
 
+.logo a{
+font-size:22px;
+font-weight:bold;
+color:white;
+text-decoration:none;
+}
+
+.nav-links a{
+margin-left:20px;
+text-decoration:none;
+color:white;
+font-weight:500;
+}
+
+.nav-links a:hover{
+text-decoration:underline;
+}
+
+.cart-badge{
+background:white;
+color:#ff4d4d;
+padding:2px 8px;
+border-radius:50%;
+font-size:12px;
+margin-left:5px;
+}
 .cart-summary{
 background:#020617;
 padding:20px;

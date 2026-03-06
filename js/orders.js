@@ -1,18 +1,37 @@
-let orders=JSON.parse(localStorage.getItem("orders"))||[]
+let orders = JSON.parse(localStorage.getItem("orders")) || [];
 
-let container=document.getElementById("ordersList")
+let container = document.getElementById("ordersList");
 
-orders.forEach(order=>{
+if(orders.length === 0){
+container.innerHTML = "<h3 style='color:white'>No orders yet</h3>";
+}
 
-let div=document.createElement("div")
+orders.forEach(order => {
 
-div.className="card"
+let div = document.createElement("div");
 
-div.innerHTML=`
+div.style.background = "#132a45";
+div.style.padding = "20px";
+div.style.marginBottom = "20px";
+div.style.borderRadius = "10px";
+
+let html = `
 <h3>Order ID: ${order.id}</h3>
-<p>${order.items.length} pizzas</p>
-`
+<p>Date: ${order.date}</p>
+<p><b>${order.items.length} pizzas</b></p>
+<hr>
+`;
 
-container.appendChild(div)
+order.items.forEach(item => {
 
-})
+html += `
+<p>${item.name} - ${item.size} - ₹${item.price}</p>
+`;
+
+});
+
+div.innerHTML = html;
+
+container.appendChild(div);
+
+});
