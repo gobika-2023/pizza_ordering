@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Pizza Menu</title>
+<link rel="stylesheet" href="css/style.css">
+
+<style>
+
+.menu-header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-bottom:30px;
+}
+
+.search-box{
+padding:10px;
+border-radius:8px;
+border:none;
+width:250px;
+}
+
+.filter{
+padding:10px;
+border-radius:8px;
+border:none;
+}
+
+.menu-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:30px;
+}
+
+.pizza-card{
+background:rgba(255,255,255,0.9);
+border-radius:18px;
+overflow:hidden;
+box-shadow:0 10px 25px rgba(0,0,0,0.2);
+transition:0.3s;
+}
+
+.pizza-card:hover{
+transform:translateY(-10px) scale(1.02);
+}
+
+.pizza-card img{
+width:100%;
+height:200px;
+object-fit:cover;
+}
+
+.pizza-info{
+padding:15px;
+}
+
+.size-select{
+margin:10px 0;
+}
+
+.add-btn{
+background:#ff5a00;
+color:white;
+border:none;
+padding:10px;
+width:100%;
+border-radius:8px;
+cursor:pointer;
+font-weight:bold;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div id="navbar"></div>
+
+<div class="container">
+
+<div class="menu-header">
+
+<h1 style="color:white">Pizza Menu</h1>
+
+<div>
+<input type="text" id="search" class="search-box" placeholder="Search pizza...">
+
+<select id="filter" class="filter">
+<option value="all">All</option>
+<option value="veg">Veg</option>
+<option value="nonveg">Non-Veg</option>
+</select>
+</div>
+
+</div>
+
+<div id="pizzaContainer" class="menu-grid"></div>
+
+</div>
+
+<div id="footer"></div>
+
+<script src="js/main.js"></script>
+<script src="js/menu.js"></script>
+
+</body>
+</html>

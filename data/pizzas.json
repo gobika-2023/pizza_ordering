@@ -1,0 +1,136 @@
+[
+{
+"id":1,
+"name":"Margherita",
+"description":"Classic mozzarella cheese pizza",
+"price":299,
+"type":"veg",
+"image":"https://images.unsplash.com/photo-1604382355076-af4b0eb60143"
+},
+
+{
+"id":2,
+"name":"Farmhouse",
+"description":"Loaded with onion, capsicum, tomato",
+"price":349,
+"type":"veg",
+"image":"https://images.unsplash.com/photo-1594007654729-407eedc4be65"
+},
+
+{
+"id":3,
+"name":"Veg Extravaganza",
+"description":"Golden corn, olives, jalapenos",
+"price":399,
+"type":"veg",
+"image":"https://images.unsplash.com/photo-1548365328-9f547fb0953c"
+},
+
+{
+"id":4,
+"name":"Paneer Tikka",
+"description":"Indian style paneer tikka pizza",
+"price":379,
+"type":"veg",
+"image":"https://images.unsplash.com/photo-1601924638867-3ec3c1d1f1c1"
+},
+
+{
+"id":5,
+"name":"Cheese Burst",
+"description":"Extra cheese overloaded pizza",
+"price":419,
+"type":"veg",
+"image":"https://images.unsplash.com/photo-1574071318508-1cdbab80d002"
+},
+
+{
+"id":6,
+"name":"Mushroom Delight",
+"description":"Fresh mushrooms with cheese",
+"price":339,
+"type":"veg",
+"image":"https://images.unsplash.com/photo-1513104890138-7c749659a591"
+},
+
+{
+"id":7,
+"name":"Pepperoni",
+"description":"Classic American pepperoni pizza",
+"price":459,
+"type":"nonveg",
+"image":"https://images.unsplash.com/photo-1628840042765-356cda07504e"
+},
+
+{
+"id":8,
+"name":"Chicken Dominator",
+"description":"Loaded with chicken toppings",
+"price":499,
+"type":"nonveg",
+"image":"https://images.unsplash.com/photo-1593560708920-61dd98c46a4e"
+},
+
+{
+"id":9,
+"name":"BBQ Chicken",
+"description":"Smoky BBQ chicken pizza",
+"price":479,
+"type":"nonveg",
+"image":"https://images.unsplash.com/photo-1565299624946-b28f40a0ae38"
+},
+
+{
+"id":10,
+"name":"Chicken Tikka",
+"description":"Spicy Indian chicken tikka pizza",
+"price":469,
+"type":"nonveg",
+"image":"https://images.unsplash.com/photo-1600891964599-f61ba0e24092"
+},
+
+{
+"id":11,
+"name":"Mexican Green Wave",
+"description":"Mexican herbs and veggies",
+"price":369,
+"type":"veg",
+"image":"https://images.unsplash.com/photo-1571407970349-bc81e7e96d47"
+},
+
+{
+"id":12,
+"name":"Double Cheese",
+"description":"Double mozzarella delight",
+"price":399,
+"type":"veg",
+"image":"https://images.unsplash.com/photo-1541745537411-b8046dc6d66c"
+},
+
+{
+"id":13,
+"name":"Chicken Sausage",
+"description":"Chicken sausage with cheese",
+"price":449,
+"type":"nonveg",
+"image":"https://images.unsplash.com/photo-1590947132387-155cc02f3212"
+},
+
+{
+"id":14,
+"name":"Peri Peri Chicken",
+"description":"Hot peri peri chicken pizza",
+"price":489,
+"type":"nonveg",
+"image":"https://images.unsplash.com/photo-1534308983496-4fabb1a015ee"
+},
+
+{
+"id":15,
+"name":"Italian Supreme",
+"description":"Italian herbs and toppings",
+"price":429,
+"type":"veg",
+"image":"https://images.unsplash.com/photo-1542281286-9e0a16bb7366"
+}
+]

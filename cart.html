@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>PizzaHub - Cart</title>
+
+<style>
+
+body{
+font-family: Arial;
+background:#0b1a2d;
+color:white;
+margin:0;
+padding:0;
+}
+
+.navbar{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 40px;
+background:black;
+}
+
+.logo{
+color:orange;
+font-size:22px;
+font-weight:bold;
+}
+
+.nav-links a{
+color:white;
+text-decoration:none;
+margin-left:20px;
+}
+
+.container{
+width:80%;
+margin:auto;
+margin-top:40px;
+}
+
+.cart-item{
+display:flex;
+align-items:center;
+background:#132a45;
+padding:15px;
+border-radius:10px;
+margin-bottom:15px;
+}
+
+.cart-info{
+margin-left:20px;
+}
+
+#cartTotal{
+margin-top:30px;
+font-size:22px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<div class="navbar">
+
+<div class="logo">🍕 PizzaHub</div>
+
+<div class="nav-links">
+<a href="index.html">Home</a>
+<a href="menu.html">Menu</a>
+<a href="cart.html">Cart</a>
+<a href="orders.html">Orders</a>
+</div>
+
+</div>
+
+<!-- CART SECTION -->
+
+<div class="container">
+
+<h1>Your Cart</h1>
+
+<div id="cartItems"></div>
+
+<h2 id="cartTotal"></h2>
+
+</div>
+
+<script>
+
+let cart = JSON.parse(localStorage.getItem("cart")) || []
+
+let container = document.getElementById("cartItems")
+
+let total = 0
+
+container.innerHTML = ""
+
+cart.forEach(item => {
+
+let card = document.createElement("div")
+card.className = "cart-item"
+
+card.innerHTML = `
+
+<img src="${item.image}" width="120">
+
+<div class="cart-info">
+
+<h3>${item.name}</h3>
+
+<p>Size: ${item.size}</p>
+
+<b>₹${item.price}</b>
+
+</div>
+
+`
+
+container.appendChild(card)
+
+total += item.price
+
+})
+
+document.getElementById("cartTotal").innerText = "Total: ₹" + total
+
+</script>
+
+</body>
+</html>
