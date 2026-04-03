@@ -1,0 +1,10 @@
+services:
+  gitea:
+    image: docker.gitea.com/gitea:latest
+    container_name: gitea-container-for-demo
+    restart: always
+    ports:
+      - "3001:3000"   # host port 3001 → container port 3000
+      - "2222:22"
+    volumes:
+      - ./gitea:/data
