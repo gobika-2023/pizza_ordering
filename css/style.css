@@ -6,7 +6,7 @@ font-family:'Poppins',sans-serif;
 }
 
 body{
-background:#0f172a;
+background:#121828;
 color:white;
 }
 
@@ -34,7 +34,7 @@ z-index:100;
 .logo{
 font-size:26px;
 font-weight:700;
-color:#f97316;
+color:#f27a03;
 }
 
 .nav-links a{
